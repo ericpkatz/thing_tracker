@@ -36,7 +36,7 @@ app.put('/api/things/:id', async(req, res, next)=> {
 
 app.get('/api/things', async(req, res, next)=> {
   try {
-    const response = await client.query('SELECT * FROM things');
+    const response = await client.query('SELECT * FROM things ORDER BY name');
     res.send(response.rows);
   }
   catch(ex){
